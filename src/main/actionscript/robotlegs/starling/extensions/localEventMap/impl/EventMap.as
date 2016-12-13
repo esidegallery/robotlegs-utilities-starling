@@ -7,11 +7,10 @@
 
 package robotlegs.starling.extensions.localEventMap.impl
 {
-	import starling.events.EventDispatcher;
-	import flash.events.IEventDispatcher;
-
-	import starling.events.Event;
 	import robotlegs.starling.extensions.localEventMap.api.IEventMap;
+	
+	import starling.events.Event;
+	import starling.events.EventDispatcher;
 
 	/**
 	 * @private

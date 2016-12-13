@@ -9,11 +9,15 @@ package robotlegs.starling.bundles.mvcs
 {
 	import flash.events.Event;
 	import flash.events.IEventDispatcher;
-
+	import flash.utils.getDefinitionByName;
+	import flash.utils.getQualifiedClassName;
+	import flash.utils.getQualifiedSuperclassName;
+	
 	import robotlegs.bender.extensions.localEventMap.api.IEventMap;
-	import robotlegs.starling.extensions.localEventMap.api.IEventMap;
 	import robotlegs.bender.extensions.mediatorMap.api.IMediator;
-
+	import robotlegs.starling.extensions.localEventMap.api.IEventMap;
+	
+	import starling.events.Event;
 	import starling.events.EventDispatcher;
 
 	/**
@@ -36,6 +40,9 @@ package robotlegs.starling.bundles.mvcs
 
 		[Inject]
 		public var eventDispatcher:IEventDispatcher;
+		
+		[Inject]
+		public var starlingEventDispatcher:EventDispatcher;
 
 		private var _viewComponent:Object;
 
@@ -86,7 +93,10 @@ package robotlegs.starling.bundles.mvcs
 
 		protected function addContextListener(eventString:String, listener:Function, eventClass:Class = null):void
 		{
-			eventMap.mapListener(eventDispatcher, eventString, listener, eventClass);
+			if (eventClass == starling.events.Event || inheritsFrom(eventClass, starling.events.Event))
+				starlingEventMap.mapListener(starlingEventDispatcher, eventString, listener, eventClass);
+			else
+				eventMap.mapListener(eventDispatcher, eventString, listener, eventClass);
 		}
 
 		protected function removeViewListener(eventString:String, listener:Function, eventClass:Class = null):void
@@ -96,13 +106,31 @@ package robotlegs.starling.bundles.mvcs
 
 		protected function removeContextListener(eventString:String, listener:Function, eventClass:Class = null):void
 		{
-			eventMap.unmapListener(eventDispatcher, eventString, listener, eventClass);
+			if (inheritsFrom(eventClass, starling.events.Event))
+				starlingEventMap.unmapListener(starlingEventDispatcher, eventString, listener, eventClass);
+			else
+				eventMap.unmapListener(eventDispatcher, eventString, listener, eventClass);
 		}
 
-		protected function dispatch(event:Event):void
+		protected function dispatch(event:Object):void
 		{
-			if (eventDispatcher.hasEventListener(event.type))
-				eventDispatcher.dispatchEvent(event);
+			if (event is starling.events.Event)
+				starlingEventDispatcher.dispatchEvent(event as starling.events.Event);
+			else if (event is flash.events.Event && eventDispatcher.hasEventListener(event.type))
+				eventDispatcher.dispatchEvent(event as flash.events.Event);
+		}
+		
+		private function inheritsFrom(descendant:Class, ancestor:Class):Boolean
+		{ 
+			var superName:String;
+			var ancestorClassName:String = getQualifiedClassName(ancestor);
+			while (superName != "Object") {
+				superName = getQualifiedSuperclassName(descendant);
+				if (superName == ancestorClassName)
+					return true;
+				descendant = Class(getDefinitionByName(superName));
+			}
+			return false;
 		}
 	}
 }
