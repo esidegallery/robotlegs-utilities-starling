@@ -86,11 +86,17 @@ package robotlegs.starling.bundles.mvcs
 		/* Protected Functions                                                        */
 		/*============================================================================*/
 
+		/** Registers a listener for a Starling based event from the view. */
 		protected function addViewListener(eventString:String, listener:Function, eventClass:Class = null):void
 		{
 			starlingEventMap.mapListener(EventDispatcher(_viewComponent), eventString, listener, eventClass);
 		}
 
+		/**
+		 * Registers a listener for a context (framework) event via the appropriate channel depending on the Event class:
+		 * <li>Registers with the injected <code>starling.events.EventDispatcher</code> when <code>eventClass</code> is <code>starling.events.Event</code> or subclass</li>
+		 * <li>Otherwise, registers with the injected <code>flash.events.IEventDispatcher</code></li>
+		 */
 		protected function addContextListener(eventString:String, listener:Function, eventClass:Class = null):void
 		{
 			if (eventClass == starling.events.Event || inheritsFrom(eventClass, starling.events.Event))
@@ -99,11 +105,17 @@ package robotlegs.starling.bundles.mvcs
 				eventMap.mapListener(eventDispatcher, eventString, listener, eventClass);
 		}
 
+		/** Unregisters a listener for a Starling based event from the view. */
 		protected function removeViewListener(eventString:String, listener:Function, eventClass:Class = null):void
 		{
 			starlingEventMap.unmapListener(EventDispatcher(_viewComponent), eventString, listener, eventClass);
 		}
 
+		/**
+		 * Unregisters a listener for a context (framework) event via the appropriate channel depending on the Event class:
+		 * <li>Unregisters with the injected <code>starling.events.EventDispatcher</code> when <code>eventClass</code> is <code>starling.events.Event</code> or subclass</li>
+		 * <li>Otherwise, unregisters with the injected <code>flash.events.IEventDispatcher</code></li>
+		 */
 		protected function removeContextListener(eventString:String, listener:Function, eventClass:Class = null):void
 		{
 			if (inheritsFrom(eventClass, starling.events.Event))
@@ -112,6 +124,11 @@ package robotlegs.starling.bundles.mvcs
 				eventMap.unmapListener(eventDispatcher, eventString, listener, eventClass);
 		}
 
+		/** 
+		 * Dispatches an event via the appropriate event dispatcher:
+		 * <li>The injected <code>flash.events.IEventDispatcher</code> for <code>flash.events.Event</code> instances</li>
+		 * <li>The injected <code>starling.events.EventDispatcher</li></code> for <code>starling.events.Event</code> instances</li>  
+		 */
 		protected function dispatch(event:Object):void
 		{
 			if (event is starling.events.Event)

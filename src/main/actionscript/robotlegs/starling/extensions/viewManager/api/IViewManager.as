@@ -7,6 +7,8 @@
 
 package robotlegs.starling.extensions.viewManager.api
 {
+	import flash.events.IEventDispatcher;
+	
 	import starling.display.DisplayObjectContainer;
 
 	[Event(name="containerAdd", type="robotlegs.starling.extensions.viewManager.impl.ViewManagerEvent")]
@@ -16,7 +18,7 @@ package robotlegs.starling.extensions.viewManager.api
 	/**
 	 * The View Manager allows you to add multiple "view root" containers to a context
 	 */
-	public interface IViewManager
+	public interface IViewManager extends IEventDispatcher
 	{
 
 		/**

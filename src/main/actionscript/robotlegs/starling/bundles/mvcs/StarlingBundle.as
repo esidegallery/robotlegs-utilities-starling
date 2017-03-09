@@ -22,6 +22,7 @@ package robotlegs.starling.bundles.mvcs {
 	import robotlegs.starling.extensions.contextView.StageSyncExtension;
 	import robotlegs.starling.extensions.localEventMap.StarlingEventMapExtension;
 	import robotlegs.starling.extensions.mediatorMap.MediatorMapExtension;
+	import robotlegs.starling.extensions.modularity.ModularityExtension;
 	import robotlegs.starling.extensions.starlingEventCommandMap.StarlingEventCommandMapExtension;
 	import robotlegs.starling.extensions.viewManager.ManualStageObserverExtension;
 	import robotlegs.starling.extensions.viewManager.StageCrawlerExtension;
@@ -37,7 +38,7 @@ package robotlegs.starling.bundles.mvcs {
 					InjectableLoggerExtension,
 					ContextViewExtension,
 					EventDispatcherExtension,
-					//ModularityExtension,
+					ModularityExtension,
 					DirectCommandMapExtension,
 					EventCommandMapExtension,
 					StarlingEventCommandMapExtension,
