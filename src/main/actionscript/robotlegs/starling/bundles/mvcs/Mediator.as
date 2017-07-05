@@ -138,10 +138,13 @@ package robotlegs.starling.bundles.mvcs
 		}
 		
 		private function inheritsFrom(descendant:Class, ancestor:Class):Boolean
-		{ 
+		{
+			if (!descendant || !ancestor)
+				return false;
+			
 			var superName:String;
 			var ancestorClassName:String = getQualifiedClassName(ancestor);
-			while (superName != "Object") {
+			while (superName && superName != "Object") {
 				superName = getQualifiedSuperclassName(descendant);
 				if (superName == ancestorClassName)
 					return true;
