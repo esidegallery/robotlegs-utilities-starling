@@ -10,7 +10,6 @@ package robotlegs.starling.extensions.viewManager.impl
 	import starling.display.DisplayObject;
 	import starling.display.DisplayObjectContainer;
 	import starling.events.Event;
-	import flash.utils.getQualifiedClassName;
 
 	/**
 	 * @private
@@ -21,8 +20,6 @@ package robotlegs.starling.extensions.viewManager.impl
 		/*============================================================================*/
 		/* Private Properties                                                         */
 		/*============================================================================*/
-
-		private const _filter:RegExp = /^mx\.|^spark\.|^flash\./;
 
 		private var _registry:ContainerRegistry;
 
@@ -79,23 +76,25 @@ package robotlegs.starling.extensions.viewManager.impl
 
 		private function addRootListener(container:DisplayObjectContainer):void
 		{
-			container.addEventListener(Event.ADDED, onViewAddedToStage);
+			// It is the ADDED event that bubbles, not the ADDED_TO_STAGE event.
+			container.addEventListener(Event.ADDED, onViewAdded);
 		}
 
 		private function removeRootListener(container:DisplayObjectContainer):void
 		{
-			container.removeEventListener(Event.ADDED, onViewAddedToStage);
+			container.removeEventListener(Event.ADDED, onViewAdded);
 		}
 
-		private function onViewAddedToStage(event:Event):void
+		private function onViewAdded(event:Event):void
 		{
-			const view:DisplayObject = event.target as DisplayObject;
-			// Question: would it be worth caching QCNs by view in a weak dictionary,
-			// to avoid getQualifiedClassName() cost?
-			const qcn:String = getQualifiedClassName(view);
-			const filtered:Boolean = _filter.test(qcn);
-			if (filtered)
-				return;
+			if (event.target is DisplayObject)
+			{
+				processView(event.target as DisplayObject);
+			}
+		}
+		
+		private function processView(view:DisplayObject):void
+		{
 			const type:Class = view['constructor'];
 			// Walk upwards from the nearest binding
 			var binding:ContainerBinding = _registry.findParentBinding(view);
@@ -103,6 +102,18 @@ package robotlegs.starling.extensions.viewManager.impl
 			{
 				binding.handleView(view, type);
 				binding = binding.parent;
+			}
+			
+			// We need to check the view's children in the same way
+			// as the ADDED_TO_STAGE event that is broadcast from them doesn't bubble:
+			var container:DisplayObjectContainer = view as DisplayObjectContainer;
+			if (container)
+			{
+				var numChildren:int = container.numChildren;
+				for (var i:int=0; i<numChildren; ++i)
+				{
+					processView(container.getChildAt(i));
+				}
 			}
 		}
 	}
