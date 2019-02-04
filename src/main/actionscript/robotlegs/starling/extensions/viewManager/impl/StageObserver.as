@@ -110,7 +110,7 @@ package robotlegs.starling.extensions.viewManager.impl
 			if (container)
 			{
 				var numChildren:int = container.numChildren;
-				for (var i:int=0; i<numChildren; ++i)
+				for (var i:int = 0; i < numChildren; ++i)
 				{
 					processView(container.getChildAt(i));
 				}
