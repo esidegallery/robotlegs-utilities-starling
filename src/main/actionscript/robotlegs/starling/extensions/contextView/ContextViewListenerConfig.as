@@ -39,7 +39,7 @@ package robotlegs.starling.extensions.contextView
 		public function configure():void
 		{
 			// Adds the Context View to the View Manager at startup
-			viewManager.addContainer(contextView.view.stage);
+			viewManager.addContainer(contextView.view);
 		}
 	}
 }

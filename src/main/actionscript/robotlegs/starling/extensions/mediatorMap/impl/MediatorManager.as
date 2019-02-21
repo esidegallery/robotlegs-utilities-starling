@@ -7,10 +7,12 @@
 
 package robotlegs.starling.extensions.mediatorMap.impl
 {
+	import flash.utils.getDefinitionByName;
+	
+	import robotlegs.starling.extensions.mediatorMap.api.IMediatorMapping;
+	
 	import starling.display.DisplayObject;
 	import starling.events.Event;
-	import flash.utils.getDefinitionByName;
-	import robotlegs.starling.extensions.mediatorMap.api.IMediatorMapping;
 
 	/**
 	 * @private
@@ -33,6 +35,8 @@ package robotlegs.starling.extensions.mediatorMap.impl
 		/*============================================================================*/
 
 		private var _factory:MediatorFactory;
+		
+		private var _syncWithFeathers:Boolean;
 
 		/*============================================================================*/
 		/* Constructor                                                                */
@@ -41,9 +45,10 @@ package robotlegs.starling.extensions.mediatorMap.impl
 		/**
 		 * @private
 		 */
-		public function MediatorManager(factory:MediatorFactory)
+		public function MediatorManager(factory:MediatorFactory, syncWithFeathers:Boolean)
 		{
 			_factory = factory;
+			_syncWithFeathers = syncWithFeathers;
 		}
 
 		/*============================================================================*/
@@ -115,7 +120,7 @@ package robotlegs.starling.extensions.mediatorMap.impl
 
 		private function itemInitialized(item:Object):Boolean
 		{
-			if (feathersAvailable && (item is UIComponentClass) && !item['isInitialized'])
+			if (feathersAvailable && _syncWithFeathers && (item is UIComponentClass) && !item['isInitialized'])
 				return false;
 			return true;
 		}

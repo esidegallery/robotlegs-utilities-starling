@@ -7,12 +7,12 @@
 
 package robotlegs.starling.extensions.mediatorMap
 {
-	import robotlegs.starling.extensions.mediatorMap.api.IMediatorMap;
-	import robotlegs.starling.extensions.mediatorMap.impl.MediatorMap;
-	import robotlegs.starling.extensions.viewManager.api.IViewManager;
 	import robotlegs.bender.framework.api.IContext;
 	import robotlegs.bender.framework.api.IExtension;
 	import robotlegs.bender.framework.api.IInjector;
+	import robotlegs.starling.extensions.mediatorMap.api.IMediatorMap;
+	import robotlegs.starling.extensions.mediatorMap.impl.MediatorMap;
+	import robotlegs.starling.extensions.viewManager.api.IViewManager;
 
 	/**
 	 * This extension installs a shared IMediatorMap into the context
@@ -29,6 +29,23 @@ package robotlegs.starling.extensions.mediatorMap
 		private var _mediatorMap:MediatorMap;
 
 		private var _viewManager:IViewManager;
+		
+		private var _syncWithFeathers:Boolean;
+		
+		/*============================================================================*/
+		/* Constructor                                                                */
+		/*============================================================================*/
+		
+		/**
+		 * Modularity
+		 *
+		 * @param synchronizeWithFeathersLifecycle Whether to listen for a view's FeathersEventType.INITIALIZE event
+		 *                                         before initializing its mediator.
+		 */
+		public function MediatorMapExtension(syncWithFeathers:Boolean = true)
+		{
+			_syncWithFeathers = syncWithFeathers;
+		}
 
 		/*============================================================================*/
 		/* Public Functions                                                           */
@@ -43,7 +60,8 @@ package robotlegs.starling.extensions.mediatorMap
 					.beforeDestroying(beforeDestroying)
 					.whenDestroying(whenDestroying);
 			_injector = context.injector;
-			_injector.map(IMediatorMap).toSingleton(MediatorMap);
+//			_injector.map(IMediatorMap).toSingleton(MediatorMap);
+			_injector.map(IMediatorMap).toValue(new MediatorMap(context, _syncWithFeathers));
 		}
 
 		/*============================================================================*/

@@ -8,11 +8,12 @@
 package robotlegs.starling.extensions.mediatorMap.impl
 {
 	import flash.utils.Dictionary;
+	
 	import robotlegs.bender.extensions.matching.ITypeFilter;
-	import robotlegs.starling.extensions.mediatorMap.api.IMediatorMapping;
 	import robotlegs.bender.framework.api.IInjector;
 	import robotlegs.bender.framework.impl.applyHooks;
 	import robotlegs.bender.framework.impl.guardsApprove;
+	import robotlegs.starling.extensions.mediatorMap.api.IMediatorMapping;
 
 	/**
 	 * @private
@@ -37,10 +38,10 @@ package robotlegs.starling.extensions.mediatorMap.impl
 		/**
 		 * @private
 		 */
-		public function MediatorFactory(injector:IInjector, manager:MediatorManager = null)
+		public function MediatorFactory(injector:IInjector, manager:MediatorManager = null, syncWithFeathers:Boolean = true)
 		{
 			_injector = injector;
-			_manager = manager || new MediatorManager(this);
+			_manager = manager || new MediatorManager(this, syncWithFeathers);
 		}
 
 		/*============================================================================*/

@@ -78,11 +78,13 @@ package robotlegs.starling.extensions.viewManager.impl
 		{
 			// It is the ADDED event that bubbles, not the ADDED_TO_STAGE event.
 			container.addEventListener(Event.ADDED, onViewAdded);
+			container.addEventListener(Event.ADDED_TO_STAGE, onContainerRootAddedToStage);
 		}
 
 		private function removeRootListener(container:DisplayObjectContainer):void
 		{
 			container.removeEventListener(Event.ADDED, onViewAdded);
+			container.removeEventListener(Event.ADDED_TO_STAGE, onContainerRootAddedToStage);
 		}
 
 		private function onViewAdded(event:Event):void
@@ -96,6 +98,7 @@ package robotlegs.starling.extensions.viewManager.impl
 		private function processView(view:DisplayObject):void
 		{
 			const type:Class = view['constructor'];
+			
 			// Walk upwards from the nearest binding
 			var binding:ContainerBinding = _registry.findParentBinding(view);
 			while (binding)
@@ -115,6 +118,15 @@ package robotlegs.starling.extensions.viewManager.impl
 					processView(container.getChildAt(i));
 				}
 			}
+		}
+		
+		private function onContainerRootAddedToStage(event:Event):void
+		{
+			const container:DisplayObjectContainer = event.target as DisplayObjectContainer;
+			container.removeEventListener(Event.ADDED_TO_STAGE, onContainerRootAddedToStage);
+			const type:Class = container['constructor'];
+			const binding:ContainerBinding = _registry.getBinding(container);
+			binding.handleView(container, type);
 		}
 	}
 }

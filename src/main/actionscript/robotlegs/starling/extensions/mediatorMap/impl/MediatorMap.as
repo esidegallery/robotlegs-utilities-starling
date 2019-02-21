@@ -7,16 +7,18 @@
 
 package robotlegs.starling.extensions.mediatorMap.impl
 {
-	import starling.display.DisplayObject;
 	import flash.utils.Dictionary;
+	
 	import robotlegs.bender.extensions.matching.ITypeMatcher;
 	import robotlegs.bender.extensions.matching.TypeMatcher;
+	import robotlegs.bender.framework.api.IContext;
+	import robotlegs.bender.framework.api.ILogger;
 	import robotlegs.starling.extensions.mediatorMap.api.IMediatorMap;
 	import robotlegs.starling.extensions.mediatorMap.dsl.IMediatorMapper;
 	import robotlegs.starling.extensions.mediatorMap.dsl.IMediatorUnmapper;
 	import robotlegs.starling.extensions.viewManager.api.IViewHandler;
-	import robotlegs.bender.framework.api.IContext;
-	import robotlegs.bender.framework.api.ILogger;
+	
+	import starling.display.DisplayObject;
 
 	/**
 	 * @private
@@ -29,13 +31,13 @@ package robotlegs.starling.extensions.mediatorMap.impl
 		/*============================================================================*/
 
 		private const _mappers:Dictionary = new Dictionary();
-
+		
 		private var _logger:ILogger;
 
 		private var _factory:MediatorFactory;
 
 		private var _viewHandler:MediatorViewHandler;
-
+		
 		private const NULL_UNMAPPER:IMediatorUnmapper = new NullMediatorUnmapper();
 
 		/*============================================================================*/
@@ -45,10 +47,10 @@ package robotlegs.starling.extensions.mediatorMap.impl
 		/**
 		 * @private
 		 */
-		public function MediatorMap(context:IContext)
+		public function MediatorMap(context:IContext, syncWithFeathers:Boolean = true)
 		{
 			_logger = context.getLogger(this);
-			_factory = new MediatorFactory(context.injector);
+			_factory = new MediatorFactory(context.injector, null, syncWithFeathers);
 			_viewHandler = new MediatorViewHandler(_factory);
 		}
 
