@@ -120,7 +120,7 @@ package robotlegs.starling.extensions.localEventMap.impl
 
 			var eventConfig:EventMapConfig;
 			var dispatcher:EventDispatcher;
-			while (eventConfig = currentListeners.pop())
+			while (Boolean(eventConfig = currentListeners.pop()))
 			{
 				if (!_suspended)
 				{
@@ -142,7 +142,7 @@ package robotlegs.starling.extensions.localEventMap.impl
 
 			var eventConfig:EventMapConfig;
 			var dispatcher:EventDispatcher;
-			while (eventConfig = _listeners.pop())
+			while (Boolean(eventConfig = _listeners.pop()))
 			{
 				dispatcher = eventConfig.dispatcher;
 				dispatcher.removeEventListener(eventConfig.eventString, eventConfig.callback);
@@ -162,7 +162,7 @@ package robotlegs.starling.extensions.localEventMap.impl
 
 			var eventConfig:EventMapConfig;
 			var dispatcher:EventDispatcher;
-			while (eventConfig = _suspendedListeners.pop())
+			while (Boolean(eventConfig = _suspendedListeners.pop()))
 			{
 				dispatcher = eventConfig.dispatcher;
 				dispatcher.addEventListener(eventConfig.eventString, eventConfig.callback);
