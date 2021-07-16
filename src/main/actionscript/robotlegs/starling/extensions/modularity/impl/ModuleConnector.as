@@ -4,7 +4,7 @@ package robotlegs.starling.extensions.modularity.impl
 	import robotlegs.bender.framework.api.IInjector;
 	import robotlegs.starling.extensions.modularity.api.IModuleConnector;
 	import robotlegs.starling.extensions.modularity.dsl.IModuleConnectionAction;
-	
+
 	import starling.events.EventDispatcher;
 
 	public class ModuleConnector implements IModuleConnector

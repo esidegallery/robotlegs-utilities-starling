@@ -8,6 +8,7 @@
 package robotlegs.starling.extensions.viewProcessorMap.utils
 {
 	import flash.utils.Dictionary;
+
 	import robotlegs.bender.framework.api.IInjector;
 
 	/**

@@ -7,15 +7,15 @@
 
 package robotlegs.starling.extensions.viewProcessorMap
 {
+	import robotlegs.bender.framework.api.IContext;
+	import robotlegs.bender.framework.api.IExtension;
+	import robotlegs.bender.framework.api.IInjector;
 	import robotlegs.starling.extensions.viewManager.api.IViewHandler;
 	import robotlegs.starling.extensions.viewManager.api.IViewManager;
 	import robotlegs.starling.extensions.viewProcessorMap.api.IViewProcessorMap;
 	import robotlegs.starling.extensions.viewProcessorMap.impl.IViewProcessorFactory;
 	import robotlegs.starling.extensions.viewProcessorMap.impl.ViewProcessorFactory;
 	import robotlegs.starling.extensions.viewProcessorMap.impl.ViewProcessorMap;
-	import robotlegs.bender.framework.api.IContext;
-	import robotlegs.bender.framework.api.IExtension;
-	import robotlegs.bender.framework.api.IInjector;
 
 	/**
 	 * This extension install a View Processor Map into a context

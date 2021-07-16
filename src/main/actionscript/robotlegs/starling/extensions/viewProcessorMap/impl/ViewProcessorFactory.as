@@ -7,16 +7,19 @@
 
 package robotlegs.starling.extensions.viewProcessorMap.impl
 {
-	import starling.display.DisplayObject;
-	import starling.events.Event;
 	import flash.utils.Dictionary;
+
 	import org.swiftsuspenders.errors.InjectorInterfaceConstructionError;
+
 	import robotlegs.bender.extensions.matching.ITypeFilter;
-	import robotlegs.starling.extensions.viewProcessorMap.api.ViewProcessorMapError;
-	import robotlegs.starling.extensions.viewProcessorMap.dsl.IViewProcessorMapping;
 	import robotlegs.bender.framework.api.IInjector;
 	import robotlegs.bender.framework.impl.applyHooks;
 	import robotlegs.bender.framework.impl.guardsApprove;
+	import robotlegs.starling.extensions.viewProcessorMap.api.ViewProcessorMapError;
+	import robotlegs.starling.extensions.viewProcessorMap.dsl.IViewProcessorMapping;
+
+	import starling.display.DisplayObject;
+	import starling.events.Event;
 
 	/**
 	 * @private

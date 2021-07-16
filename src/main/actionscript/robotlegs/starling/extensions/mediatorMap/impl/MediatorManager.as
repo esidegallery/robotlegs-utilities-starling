@@ -8,9 +8,9 @@
 package robotlegs.starling.extensions.mediatorMap.impl
 {
 	import flash.utils.getDefinitionByName;
-	
+
 	import robotlegs.starling.extensions.mediatorMap.api.IMediatorMapping;
-	
+
 	import starling.display.DisplayObject;
 	import starling.events.Event;
 

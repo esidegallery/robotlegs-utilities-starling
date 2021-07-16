@@ -7,8 +7,8 @@
 
 package robotlegs.starling.extensions.contextView
 {
-	import robotlegs.starling.extensions.viewManager.api.IViewManager;
 	import robotlegs.bender.framework.api.IConfig;
+	import robotlegs.starling.extensions.viewManager.api.IViewManager;
 
 	/**
 	 * This configuration file adds the ContextView to the viewManager.

@@ -8,7 +8,7 @@ package robotlegs.starling.extensions.starlingEventCommandMap.impl
 	import robotlegs.bender.framework.api.IInjector;
 	import robotlegs.bender.framework.api.ILogger;
 	import robotlegs.starling.extensions.starlingEventCommandMap.api.IStarlingEventCommandMap;
-	
+
 	import starling.events.EventDispatcher;
 	
 	public class StarlingEventCommandMap implements IStarlingEventCommandMap

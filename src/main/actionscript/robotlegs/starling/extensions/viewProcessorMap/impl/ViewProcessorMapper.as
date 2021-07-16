@@ -8,12 +8,13 @@
 package robotlegs.starling.extensions.viewProcessorMap.impl
 {
 	import flash.utils.Dictionary;
+
 	import robotlegs.bender.extensions.matching.ITypeFilter;
+	import robotlegs.bender.framework.api.ILogger;
 	import robotlegs.starling.extensions.viewProcessorMap.dsl.IViewProcessorMapper;
 	import robotlegs.starling.extensions.viewProcessorMap.dsl.IViewProcessorMapping;
 	import robotlegs.starling.extensions.viewProcessorMap.dsl.IViewProcessorMappingConfig;
 	import robotlegs.starling.extensions.viewProcessorMap.dsl.IViewProcessorUnmapper;
-	import robotlegs.bender.framework.api.ILogger;
 
 	/**
 	 * @private

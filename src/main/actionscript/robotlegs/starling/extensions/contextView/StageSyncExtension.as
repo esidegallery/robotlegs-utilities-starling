@@ -11,7 +11,7 @@ package robotlegs.starling.extensions.contextView
 	import robotlegs.bender.framework.api.IContext;
 	import robotlegs.bender.framework.api.IExtension;
 	import robotlegs.bender.framework.api.ILogger;
-	
+
 	import starling.display.DisplayObjectContainer;
 	import starling.events.Event;
 

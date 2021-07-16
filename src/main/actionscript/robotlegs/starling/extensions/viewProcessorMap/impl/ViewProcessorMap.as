@@ -7,14 +7,16 @@
 
 package robotlegs.starling.extensions.viewProcessorMap.impl
 {
-	import starling.display.DisplayObject;
 	import flash.utils.Dictionary;
+
 	import robotlegs.bender.extensions.matching.ITypeMatcher;
 	import robotlegs.bender.extensions.matching.TypeMatcher;
 	import robotlegs.starling.extensions.viewManager.api.IViewHandler;
 	import robotlegs.starling.extensions.viewProcessorMap.api.IViewProcessorMap;
 	import robotlegs.starling.extensions.viewProcessorMap.dsl.IViewProcessorMapper;
 	import robotlegs.starling.extensions.viewProcessorMap.dsl.IViewProcessorUnmapper;
+
+	import starling.display.DisplayObject;
 
 	/**
 	 * View Processor Map implementation

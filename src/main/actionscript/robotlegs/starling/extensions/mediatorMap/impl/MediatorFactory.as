@@ -8,7 +8,7 @@
 package robotlegs.starling.extensions.mediatorMap.impl
 {
 	import flash.utils.Dictionary;
-	
+
 	import robotlegs.bender.extensions.matching.ITypeFilter;
 	import robotlegs.bender.framework.api.IInjector;
 	import robotlegs.bender.framework.impl.applyHooks;

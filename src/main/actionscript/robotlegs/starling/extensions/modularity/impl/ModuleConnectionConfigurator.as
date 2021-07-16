@@ -2,7 +2,7 @@ package robotlegs.starling.extensions.modularity.impl
 {
 	import robotlegs.starling.extensions.eventDispatcher.impl.EventRelay;
 	import robotlegs.starling.extensions.modularity.dsl.IModuleConnectionAction;
-	
+
 	import starling.events.EventDispatcher;
 
 	/**

@@ -4,7 +4,7 @@ package robotlegs.starling.extensions.modularity.impl
 	import robotlegs.bender.framework.api.ILogger;
 	import robotlegs.starling.extensions.viewManager.api.IViewManager;
 	import robotlegs.starling.extensions.viewManager.impl.ViewManagerEvent;
-	
+
 	import starling.display.DisplayObjectContainer;
 
 	/**

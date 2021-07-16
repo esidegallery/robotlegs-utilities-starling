@@ -7,10 +7,11 @@
 
 package robotlegs.starling.extensions.viewManager.impl
 {
-	import starling.display.DisplayObject;
-	import starling.display.DisplayObjectContainer;
 	import flash.events.EventDispatcher;
 	import flash.utils.Dictionary;
+
+	import starling.display.DisplayObject;
+	import starling.display.DisplayObjectContainer;
 
 	[Event(name="containerAdd", type="robotlegs.starling.extensions.viewManager.impl.ContainerRegistryEvent")]
 	[Event(name="containerRemove", type="robotlegs.starling.extensions.viewManager.impl.ContainerRegistryEvent")]

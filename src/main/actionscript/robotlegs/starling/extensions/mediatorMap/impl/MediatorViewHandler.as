@@ -7,10 +7,12 @@
 
 package robotlegs.starling.extensions.mediatorMap.impl
 {
-	import starling.display.DisplayObject;
 	import flash.utils.Dictionary;
+
 	import robotlegs.starling.extensions.mediatorMap.api.IMediatorMapping;
 	import robotlegs.starling.extensions.viewManager.api.IViewHandler;
+
+	import starling.display.DisplayObject;
 
 	/**
 	 * @private

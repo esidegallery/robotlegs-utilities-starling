@@ -7,10 +7,10 @@
 
 package robotlegs.starling.extensions.localEventMap
 {
-	import robotlegs.starling.extensions.localEventMap.api.IEventMap;
-	import robotlegs.starling.extensions.localEventMap.impl.EventMap;
 	import robotlegs.bender.framework.api.IContext;
 	import robotlegs.bender.framework.api.IExtension;
+	import robotlegs.starling.extensions.localEventMap.api.IEventMap;
+	import robotlegs.starling.extensions.localEventMap.impl.EventMap;
 
 	/**
 	 * An Event Map keeps track of listeners and provides the ability

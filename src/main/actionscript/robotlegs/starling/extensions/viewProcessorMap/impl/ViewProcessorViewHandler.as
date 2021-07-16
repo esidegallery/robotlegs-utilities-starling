@@ -8,6 +8,7 @@
 package robotlegs.starling.extensions.viewProcessorMap.impl
 {
 	import flash.utils.Dictionary;
+
 	import robotlegs.starling.extensions.viewProcessorMap.dsl.IViewProcessorMapping;
 
 	/**

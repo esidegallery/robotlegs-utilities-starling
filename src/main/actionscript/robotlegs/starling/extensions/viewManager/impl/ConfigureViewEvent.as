@@ -7,8 +7,9 @@
 
 package robotlegs.starling.extensions.viewManager.impl
 {
-	import starling.display.DisplayObject;
 	import flash.events.Event;
+
+	import starling.display.DisplayObject;
 
 	/**
 	 * View Configuration Event

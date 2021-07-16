@@ -7,9 +7,11 @@
 
 package robotlegs.starling.extensions.viewManager.impl
 {
-	import starling.display.DisplayObjectContainer;
 	import flash.events.Event;
+
 	import robotlegs.starling.extensions.viewManager.api.IViewHandler;
+
+	import starling.display.DisplayObjectContainer;
 
 	/**
 	 * Container existence event

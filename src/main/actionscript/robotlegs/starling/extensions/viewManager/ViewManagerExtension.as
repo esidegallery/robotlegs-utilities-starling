@@ -7,12 +7,12 @@
 
 package robotlegs.starling.extensions.viewManager
 {
-	import robotlegs.starling.extensions.viewManager.api.IViewManager;
-	import robotlegs.starling.extensions.viewManager.impl.ContainerRegistry;
-	import robotlegs.starling.extensions.viewManager.impl.ViewManager;
 	import robotlegs.bender.framework.api.IContext;
 	import robotlegs.bender.framework.api.IExtension;
 	import robotlegs.bender.framework.api.IInjector;
+	import robotlegs.starling.extensions.viewManager.api.IViewManager;
+	import robotlegs.starling.extensions.viewManager.impl.ContainerRegistry;
+	import robotlegs.starling.extensions.viewManager.impl.ViewManager;
 
 	/**
 	 * This extension install a View Manager into the context

@@ -7,12 +7,12 @@
 
 package robotlegs.starling.extensions.viewManager
 {
-	import robotlegs.starling.extensions.viewManager.impl.ContainerRegistry;
-	import robotlegs.starling.extensions.viewManager.impl.ManualStageObserver;
 	import robotlegs.bender.framework.api.IContext;
 	import robotlegs.bender.framework.api.IExtension;
 	import robotlegs.bender.framework.api.IInjector;
 	import robotlegs.bender.framework.api.ILogger;
+	import robotlegs.starling.extensions.viewManager.impl.ContainerRegistry;
+	import robotlegs.starling.extensions.viewManager.impl.ManualStageObserver;
 
 	/**
 	 * This extension install a manual Stage Observer

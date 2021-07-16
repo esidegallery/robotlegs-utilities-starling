@@ -12,11 +12,11 @@ package robotlegs.starling.bundles.mvcs
 	import flash.utils.getDefinitionByName;
 	import flash.utils.getQualifiedClassName;
 	import flash.utils.getQualifiedSuperclassName;
-	
+
 	import robotlegs.bender.extensions.localEventMap.api.IEventMap;
 	import robotlegs.bender.extensions.mediatorMap.api.IMediator;
 	import robotlegs.starling.extensions.localEventMap.api.IEventMap;
-	
+
 	import starling.events.Event;
 	import starling.events.EventDispatcher;
 

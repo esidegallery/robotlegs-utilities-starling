@@ -1,9 +1,9 @@
 package robotlegs.starling.extensions.modularity.impl
 {
 	import flash.utils.getQualifiedClassName;
-	
+
 	import robotlegs.bender.framework.api.IContext;
-	
+
 	import starling.events.Event;
 	import starling.utils.StringUtil;
 

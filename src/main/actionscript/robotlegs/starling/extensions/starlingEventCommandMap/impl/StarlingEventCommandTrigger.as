@@ -9,7 +9,7 @@ package robotlegs.starling.extensions.starlingEventCommandMap.impl
 	import robotlegs.bender.extensions.commandCenter.impl.CommandMappingList;
 	import robotlegs.bender.framework.api.IInjector;
 	import robotlegs.bender.framework.api.ILogger;
-	
+
 	import starling.events.Event;
 	import starling.events.EventDispatcher;
 	

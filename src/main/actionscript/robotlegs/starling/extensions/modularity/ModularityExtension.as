@@ -12,7 +12,7 @@ package robotlegs.starling.extensions.modularity
 	import robotlegs.starling.extensions.modularity.impl.ModuleConnector;
 	import robotlegs.starling.extensions.modularity.impl.ViewManagerBasedExistenceWatcher;
 	import robotlegs.starling.extensions.viewManager.api.IViewManager;
-	
+
 	import starling.display.DisplayObjectContainer;
 	import starling.events.Event;
 	

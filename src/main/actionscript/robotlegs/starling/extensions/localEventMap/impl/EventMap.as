@@ -8,7 +8,7 @@
 package robotlegs.starling.extensions.localEventMap.impl
 {
 	import robotlegs.starling.extensions.localEventMap.api.IEventMap;
-	
+
 	import starling.events.Event;
 	import starling.events.EventDispatcher;
 

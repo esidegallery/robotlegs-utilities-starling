@@ -8,7 +8,7 @@
 package robotlegs.starling.extensions.mediatorMap.impl
 {
 	import flash.utils.Dictionary;
-	
+
 	import robotlegs.bender.extensions.matching.ITypeMatcher;
 	import robotlegs.bender.extensions.matching.TypeMatcher;
 	import robotlegs.bender.framework.api.IContext;
@@ -17,7 +17,7 @@ package robotlegs.starling.extensions.mediatorMap.impl
 	import robotlegs.starling.extensions.mediatorMap.dsl.IMediatorMapper;
 	import robotlegs.starling.extensions.mediatorMap.dsl.IMediatorUnmapper;
 	import robotlegs.starling.extensions.viewManager.api.IViewHandler;
-	
+
 	import starling.display.DisplayObject;
 
 	/**

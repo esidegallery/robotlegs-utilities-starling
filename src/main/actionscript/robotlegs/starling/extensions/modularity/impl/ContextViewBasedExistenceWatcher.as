@@ -2,7 +2,7 @@ package robotlegs.starling.extensions.modularity.impl
 {
 	import robotlegs.bender.framework.api.IContext;
 	import robotlegs.bender.framework.api.ILogger;
-	
+
 	import starling.display.DisplayObjectContainer;
 
 	public class ContextViewBasedExistenceWatcher

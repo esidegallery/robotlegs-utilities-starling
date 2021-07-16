@@ -8,7 +8,7 @@
 package robotlegs.starling.extensions.viewManager.api
 {
 	import flash.events.IEventDispatcher;
-	
+
 	import starling.display.DisplayObjectContainer;
 
 	[Event(name="containerAdd", type="robotlegs.starling.extensions.viewManager.impl.ViewManagerEvent")]

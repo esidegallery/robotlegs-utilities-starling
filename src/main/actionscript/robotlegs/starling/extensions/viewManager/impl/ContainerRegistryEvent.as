@@ -7,8 +7,9 @@
 
 package robotlegs.starling.extensions.viewManager.impl
 {
-	import starling.display.DisplayObjectContainer;
 	import flash.events.Event;
+
+	import starling.display.DisplayObjectContainer;
 
 	/**
 	 * Container existence event
